@@ -52,15 +52,6 @@ Each CLIF table has an assigned clinician who serves as the primary point of con
 | medication_admin_continuous  | Chad Hochberg, MD                             | chochbe1@jh.edu                               | chochbe1              |
 
 
-## Data Architecture 
-
-One of CLIF's key contributions is an open-source web application that enables users to convert a relational database into a longitudinal dataset with custom time intervals, select study-specific variables, and choose a preferred programming language. This facilitates straightforward data processing and enables effortless cross-center comparisons and integrations, bypassing the need for DUAs when analytic queries do not need pooled patient-level data. CLIF's deployment across four of the planned eight health systems has successfully compiled a robust ICU encounter-centric relational database, documenting 87,120 ICU admissions and capturing data from 71,190 unique patients.
-
-| ![Diagram_CLIF_ATS_v3.jpg](/images/Diagram_CLIF_ATS_v3.jpg) | 
-|:--:| 
-||
-
-
 ## Current team members 
 
 ### Clinicians 
