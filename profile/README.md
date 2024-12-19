@@ -1,9 +1,9 @@
 # CLIF 
 **Standardizing Critical Care Research Across Centers**  
 
-🌐 **Official Website**: [CLIF Consortium](https://clif-consortium.github.io/website/)  
-📚 **Data Dictionary**: [View ERD and Tables](https://clif-consortium.github.io/website/data-dictionary.html)
-🤖 **CLIF Assistant** [Custom GPT for CLIF](https://chatgpt.com/g/g-h1nk6d3eR-clif-assistant)
+🌐 [**Official Website**](https://clif-consortium.github.io/website/)  
+📚 [**Data Dictionary**](https://clif-consortium.github.io/website/data-dictionary.html)  
+🤖 [**CLIF Assistant**](https://chatgpt.com/g/g-h1nk6d3eR-clif-assistant)
 
 ---
 
