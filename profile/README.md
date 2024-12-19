@@ -30,7 +30,5 @@ Jay Koyner, Bhakti Patel, Kevin Smith, Haley Beck, Yuan Luo, Chengsheng Mao, Sus
 
 ## 🛠️ **Get Involved**  
 📧 **Contact Us**: clif-consortium@uchicago.edu  
-⭐ **Star Our Repos**: [CLIF GitHub](https://github.com/clif-consortium/CLIF)
+⭐ **Star Our Repos**: [CLIF GitHub](https://github.com/clif-consortium/CLIF)  
 🖌️ **Have a research question?**: [Submit a Project Proposal](https://redcap.uchicago.edu/surveys/?s=7FMNPWTXKP3P3ANW)
-
-Let’s build better critical care research, together! 💡
