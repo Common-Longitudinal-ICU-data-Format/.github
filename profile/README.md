@@ -1,24 +1,17 @@
-# 🌟 Common Longitudinal ICU Format (CLIF)  
+# CLIF 
 **Standardizing Critical Care Research Across Centers**  
 
-🌐 **Official Website**: [CLIF Consortium](https://kaveric.github.io/clif-consortium/about.html)  
-📄 **Workflow Documentation**: [CLIF Project Workflow](https://github.com/clif-consortium/CLIF/blob/main/WORKFLOW.md)  
-📚 **Data Dictionary**: [View ERD and Tables](https://clif-consortium.github.io/website/data-dictionary.html)  
+🌐 **Official Website**: [CLIF Consortium](https://clif-consortium.github.io/website/)  
+📚 **Data Dictionary**: [View ERD and Tables](https://clif-consortium.github.io/website/data-dictionary.html)
+🤖 **CLIF Assistant** [Custom GPT for CLIF](https://chatgpt.com/g/g-h1nk6d3eR-clif-assistant)
 
 ---
 
 ## 🚀 **What is CLIF?**  
 CLIF (Common Longitudinal ICU data Format) is a **standardized data framework** for observational studies of critically ill patients. It transforms fragmented EHR data into a **longitudinal, hospitalization-centric format** to enable:  
-- 🩺 **Better Clinical Research**  
+- 🩺 **Privacy preserving federated analytics**  
 - 📊 **Cross-Center Comparisons**  
-- 🛠️ **Streamlined Analytics**  
-
----
-
-## 🗂️ **How Does CLIF Work?**  
-- **Relational Database Schema**: Hospitalization-centric tables designed for critical care research.  
-- **Standardized Vocabulary**: minimum Common Data Elements identified for .  
-- **Custom Tools**: Open-source tools to generate time-series datasets, select variables, and export queries.  
+- 🛠️ **Streamlined critical illness research**  
 
 ---
 
@@ -37,6 +30,7 @@ Jay Koyner, Bhakti Patel, Kevin Smith, Haley Beck, Yuan Luo, Chengsheng Mao, Sus
 
 ## 🛠️ **Get Involved**  
 📧 **Contact Us**: clif-consortium@uchicago.edu  
-⭐ **Star Our Repos**: [CLIF GitHub](https://github.com/clif-consortium/CLIF)  
+⭐ **Star Our Repos**: [CLIF GitHub](https://github.com/clif-consortium/CLIF)
+🖌️ **Have a research question?**: [Submit a Project Proposal](https://redcap.uchicago.edu/surveys/?s=7FMNPWTXKP3P3ANW)
 
 Let’s build better critical care research, together! 💡
