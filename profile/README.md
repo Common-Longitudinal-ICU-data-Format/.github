@@ -1,5 +1,5 @@
 # CLIF 
-**Standardizing Critical Care Research Across Centers**  
+**Standardizing Critical Care Research Across health systems**  
 
 🌐 [**Official Website**](https://clif-consortium.github.io/website/)  
 📚 [**Data Dictionary**](https://clif-consortium.github.io/website/data-dictionary.html)  
