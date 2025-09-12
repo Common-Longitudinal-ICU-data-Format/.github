@@ -4,9 +4,9 @@
 📚 [**Data Dictionary**](https://clif-icu.com/data-dictionary/)  
 🤖 [**CLIF Assistant**](https://chatgpt.com/g/g-h1nk6d3eR-clif-assistant)
 
-## **Our Respositories**  
+### **Our Respositories**  
 
-### **PROJECTS**  
+#### **Projects**  
 * `CLIF_rule-based-SAT-comparison`
 * `CLIF_icu_readmission`
 * `clif_prf_prediction`
@@ -27,7 +27,7 @@
 * `CLIF_FiOvsSF_Performance`
 * `ARF-NIV_TreatmentLocation`
 
-### **TOOLS**  
+#### **Tools**  
 * [CLIFpy](https://github.com/Common-Longitudinal-ICU-data-Format/clifpy)
 * `CLIF_cohort_identifier`
 * `CLIF-Cohort-Discovery`
@@ -36,7 +36,7 @@
 * `CLIF-Cohort-Dashboard`
 * `clif-project-bot`
 
-### **ETL Pipelines** 
+#### **ETL Pipelines** 
 * `OMOP-CLIF`
 * `CLIF-OMOP`
 * `CLIF-MIMIC`
