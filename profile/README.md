@@ -1,8 +1,4 @@
-# Common Longitudinal ICU data Format (CLIF) 
-**Advancing Critical Care Through Federated Research**  
-🌐 [**Official Website**](https://clif-consortium.github.io/website/)  
-📚 [**Data Dictionary**](https://clif-icu.com/data-dictionary/)  
-🤖 [**CLIF Assistant**](https://chatgpt.com/g/g-h1nk6d3eR-clif-assistant)
+**Advancing Critical Care Through Federated Research**, read more at our 🌐 [**Official Website**](https://clif-consortium.github.io/website/) or chat with our 🤖 [**CLIF Assistant**](https://chatgpt.com/g/g-h1nk6d3eR-clif-assistant)!
 
 ### **Our Respositories**  
 
