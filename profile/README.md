@@ -1,20 +1,10 @@
-# Common Longitudinal ICU data Format (CLIF)
+# Common Longitudinal ICU data Format (CLIF) 
 **Advancing Critical Care Through Federated Research**  
 An open source data standard for longitudinal ICU data that enables high quality privacy-preserving multicenter research 
 
 🌐 [**Official Website**](https://clif-consortium.github.io/website/)  
 📚 [**Data Dictionary**](https://clif-icu.com/data-dictionary/)  
 🤖 [**CLIF Assistant**](https://chatgpt.com/g/g-h1nk6d3eR-clif-assistant)
-
----
-
-## 🚀 **What is CLIF?**  
-CLIF (Common Longitudinal ICU data Format) is a **standardized data framework** for observational studies of critically ill patients. It transforms fragmented EHR data into a **longitudinal, hospitalization-centric format** to enable:  
-- 🩺 **Privacy preserving federated analytics**  
-- 📊 **Cross-Center Comparisons**  
-- 🛠️ **Streamlined critical illness research**  
-
----
 
 ## **Our Respositories**  
 
