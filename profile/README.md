@@ -15,20 +15,36 @@ CLIF (Common Longitudinal ICU data Format) is a **standardized data framework** 
 
 ---
 
-## 🤝 **Our Team**  
+## **Our Respositories**  
 
-👨‍⚕️ **Clinicians**  
-William Parker, J.C. Rojas, Pat Lyons, Catherine Gao, Chad Hochberg, Nicholas Ingraham, Siva Bhavani, Anna Barker, Kevin Buell, Snigdha Jain 
+### **PROJECTS**  
+* `CLIF_rule-based-SAT-comparison`
+* `CLIF_icu_readmission`
+* `clif_prf_prediction`
+* `clif_vent_variation`
+* `CLIF_rule_based_SAT_SBT_signature`
+* `CLIF-SIPA`
+* `CLIF_sepsis`
+* `CLIF-C2D2`
+* `OMOP-CLIF`
+* `CLIF-eligibility-for-mobilization`
+* `CLIF-OMOP`
+* `clif_prf_itrach`
+* `CLIF-epi-of-sedation`
+* `CLIF-transplant-valeos`
+* `CLIF_Proning_Incidence_Severe_ARF`
+* `CLIF-MIMIC`
+* `CLIF_transplant`
+* `CLIF-epidemiology-of-CRRT`
+* `CLIF-sipa-model-training`
+* `CLIFATRON`
+* `CLIF_FiOvsSF_Performance`
+* `ARF-NIV_TreatmentLocation`
 
-💻 **Data Scientists**  
-Kaveri Chhikara, Vaishvik C., Rachel Baccile, Kyle Carey, Saki Amagai, Brenna Park-Egan, Muna Nour  
-
-🌟 **Collaborators**  
-Jay Koyner, Bhakti Patel, Kevin Smith, Haley Beck, Yuan Luo, Chengsheng Mao, Susan Han  
-
----
-
-## 🛠️ **Get Involved**  
-📧 **Contact Us**: clif-consortium@uchicago.edu  
-⭐ **Star Our Repos**: [CLIF GitHub](https://github.com/clif-consortium/CLIF)  
-🖌️ **Have a research question?**: [Submit a Project Proposal](https://redcap.uchicago.edu/surveys/?s=7FMNPWTXKP3P3ANW)
+### **TOOLS**  
+* `CLIF_cohort_identifier`
+* `CLIF-Cohort-Discovery`
+* `CLIF-TableOne`
+* `CLIF-Lighthouse`
+* `CLIF-Cohort-Dashboard`
+* `clif-project-bot`
