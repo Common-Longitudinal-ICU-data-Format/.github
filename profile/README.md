@@ -1,12 +1,20 @@
-**Advancing Critical Care Through Federated Research**, read more at our 🌐 [**Official Website**](https://clif-consortium.github.io/website/) or chat with our 🤖 [**CLIF Assistant**](https://chatgpt.com/g/g-h1nk6d3eR-clif-assistant)!
+<div align="center">
 
-## Our Repositories
+# CLIF
+Advancing Critical Care Through Federated Research, read more at our 🌐 [Website](https://clif-consortium.github.io/website/) or chat with our 🤖 [**CLIF Assistant**](https://chatgpt.com/g/g-h1nk6d3eR-clif-assistant)!
+
+ </div>
+
+<div align="center">
+  
+### Our Repositories
+</div>
 
 <table>
 <tr>
 <td width="33%" valign="top">
 
-### 🔬 **Projects**
+#### 🔬 **Projects**
 ----
 - `CLIF_rule-based-SAT-comparison`
 - `CLIF_icu_readmission`
@@ -31,9 +39,9 @@
 </td>
 <td width="33%" valign="top">
 
-### 🛠️ **Tools**
+#### 🛠️ **Tools**
 ----
-- [**CLIFpy**](https://github.com/Common-Longitudinal-ICU-data-Format/clifpy) - Core Python library
+- [**CLIFpy**](https://github.com/Common-Longitudinal-ICU-data-Format/clifpy) [![PyPI](https://img.shields.io/pypi/v/clifpy)](https://pypi.org/project/clifpy/) 
 - **CLIF_cohort_identifier** - Patient identification
 - **CLIF-Cohort-Discovery** - Advanced cohort discovery
 - **CLIF-TableOne** - Statistical analysis
@@ -43,7 +51,7 @@
 </td>
 <td width="33%" valign="top">
 
-### 🔄 **Data Pipelines**
+#### 🔄 **Data Pipelines**
 ----
 - **OMOP-CLIF** 
 - **CLIF-OMOP** 
@@ -52,3 +60,4 @@
 </td>
 </tr>
 </table>
+
