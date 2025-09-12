@@ -1,5 +1,6 @@
-# CLIF 
-**Standardizing Critical Care Research Across health systems**  
+# Common Longitudinal ICU data Format (CLIF)
+**Advancing Critical Care Through Federated Research**  
+An open source data standard for longitudinal ICU data that enables high quality privacy-preserving multicenter research 
 
 🌐 [**Official Website**](https://clif-consortium.github.io/website/)  
 📚 [**Data Dictionary**](https://clif-icu.com/data-dictionary/)  
@@ -26,14 +27,11 @@ CLIF (Common Longitudinal ICU data Format) is a **standardized data framework** 
 * `CLIF-SIPA`
 * `CLIF_sepsis`
 * `CLIF-C2D2`
-* `OMOP-CLIF`
 * `CLIF-eligibility-for-mobilization`
-* `CLIF-OMOP`
 * `clif_prf_itrach`
 * `CLIF-epi-of-sedation`
 * `CLIF-transplant-valeos`
 * `CLIF_Proning_Incidence_Severe_ARF`
-* `CLIF-MIMIC`
 * `CLIF_transplant`
 * `CLIF-epidemiology-of-CRRT`
 * `CLIF-sipa-model-training`
@@ -48,3 +46,8 @@ CLIF (Common Longitudinal ICU data Format) is a **standardized data framework** 
 * `CLIF-Lighthouse`
 * `CLIF-Cohort-Dashboard`
 * `clif-project-bot`
+
+### **ETL Pipelines** 
+* `OMOP-CLIF`
+* `CLIF-OMOP`
+* `CLIF-MIMIC`
