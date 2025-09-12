@@ -1,6 +1,6 @@
 <div align="center">
 
-# CLIF
+# Common Longitudinal ICU data Format (CLIF)
 Advancing Critical Care Through Federated Research, read more at our 🌐 [Website](https://clif-consortium.github.io/website/) or chat with our 🤖 [**CLIF Assistant**](https://chatgpt.com/g/g-h1nk6d3eR-clif-assistant)!
 
  </div>
