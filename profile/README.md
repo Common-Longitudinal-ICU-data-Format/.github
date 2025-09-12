@@ -2,7 +2,7 @@
 **Standardizing Critical Care Research Across health systems**  
 
 🌐 [**Official Website**](https://clif-consortium.github.io/website/)  
-📚 [**Data Dictionary**](https://clif-consortium.github.io/website/data-dictionary/data-dictionary-2.0.0.html)  
+📚 [**Data Dictionary**](https://clif-icu.com/data-dictionary/)  
 🤖 [**CLIF Assistant**](https://chatgpt.com/g/g-h1nk6d3eR-clif-assistant)
 
 ---
