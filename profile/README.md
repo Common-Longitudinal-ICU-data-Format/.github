@@ -58,11 +58,9 @@ Advancing Critical Care Through Federated Research, read more at our 🌐 [Websi
 <td width="300px" valign="top">
 
 #### 🔄 **Data Pipelines**
-----
-1. [OMOP-CLIF](https://github.com/Common-Longitudinal-ICU-data-Format/OMOP-CLIF)  
-2. [CLIF-OMOP](https://github.com/Common-Longitudinal-ICU-data-Format/CLIF-OMOP)  
-3. [CLIF-MIMIC](https://github.com/Common-Longitudinal-ICU-data-Format/CLIF-MIMIC)
-4. [CLIF-C2D2](https://github.com/Common-Longitudinal-ICU-data-Format/CLIF-C2D2)  
+---- 
+1. [CLIF-MIMIC](https://github.com/Common-Longitudinal-ICU-data-Format/CLIF-MIMIC)
+2. [CLIF-C2D2](https://github.com/Common-Longitudinal-ICU-data-Format/CLIF-C2D2)  
 
 </td>
 
