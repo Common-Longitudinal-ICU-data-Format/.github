@@ -38,8 +38,18 @@ Advancing Critical Care Through Federated Research, read more at our 🌐 [Websi
 14. [CLIF-epidemiology-of-CRRT](https://github.com/Common-Longitudinal-ICU-data-Format/CLIF-epidemiology-of-CRRT)  
 15. [CLIF-sipa-model-training](https://github.com/Common-Longitudinal-ICU-data-Format/CLIF-sipa-model-training)  
 16. [CLIFATRON](https://github.com/Common-Longitudinal-ICU-data-Format/CLIFATRON)  
-17. [ARF-NIV_TreatmentLocation](https://github.com/Common-Longitudinal-ICU-data-Format/ARF-NIV_TreatmentLocation)  
-
+17. [ARF-NIV_TreatmentLocation](https://github.com/Common-Longitudinal-ICU-data-Format/ARF-NIV_TreatmentLocation)
+18. [Variation in the Management of Culture-Positive Empyema](https://github.com/Common-Longitudinal-ICU-data-Format/Variation-in-the-Management-of-Culture-Positive-Empyema)
+19. [The Role of Treatment Setting in Acute Respiratory Failure: A comprehensive analysis of utilization and outcomes.](https://github.com/Common-Longitudinal-ICU-data-Format/ARF-NIV_TreatmentLocation)
+20. [Variation in Antimicrobial Consumption in Critically Ill Adults](https://github.com/Common-Longitudinal-ICU-data-Format/Variation-Antimicrobial-Consumption-in-Critically-Ill-Adults)
+21. [FLAME-ICU](https://github.com/Common-Longitudinal-ICU-data-Format/FLAME-ICU)
+22. [Paralytic use across CLIF consortium](https://github.com/baanna23/CLIF_paralytics)
+23. [REspiratory Failure Environmental Risk (REFER) in ICU Patients](https://github.com/petergraffy/CLIF-REFER)
+24. [ASE Revised Thresholds for WBC and Temperature](https://github.com/dmh0817/ASE_revised_thresholds_wbc_temp)
+25. [Differential Severity Classification and Prognostic Performance of PaO2/FiO2 versus SpO2/FiO2 Ratios in Acute Hypoxemic Respiratory Failure](https://github.com/Common-Longitudinal-ICU-data-Format/CLIF_PFvsSF_Performance)
+26. [Epidemiology of Code Status Orders Across CLIF sites](https://github.com/p-lyons/clif_code_status)
+27. [Resistance patterns of pseudomonas aeruginosa in critically ill adults](https://github.com/Common-Longitudinal-ICU-data-Format/Pseudomonas-Resistance-Patterns-in-the-United-States-A-Seven-Year-Review.git)
+28. [Effect of nocturnal sedation on SBT performance and extubation](https://github.com/Common-Longitudinal-ICU-data-Format/CLIF-epi-of-sedation)
 </td>
 
 <td width="300px" valign="top">
