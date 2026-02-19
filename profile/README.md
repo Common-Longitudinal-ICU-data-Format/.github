@@ -12,6 +12,8 @@ Advancing Critical Care Through Federated Research, read more at our 🌐 [Websi
 
 ### Our Repositories
 
+[CLIF data dictionary and minimum Common ICU data Elements](https://github.com/Common-Longitudinal-ICU-data-Format/CLIF) 
+
 </div>
 
 <div align="center">
