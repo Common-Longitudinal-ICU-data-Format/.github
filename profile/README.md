@@ -10,10 +10,11 @@ Advancing Critical Care Through Federated Research, read more at our 🌐 [Websi
 
 <div align="center">
 
-### Our Repositories
+### Our Repositories                                                                  
+  ----                                                                                         
+                               
 
 [CLIF data dictionary and minimum Common ICU data Elements](https://github.com/Common-Longitudinal-ICU-data-Format/CLIF) 
-
 </div>
 
 <div align="center">
@@ -37,7 +38,7 @@ Advancing Critical Care Through Federated Research, read more at our 🌐 [Websi
 ---- 
 1. [CLIF-MIMIC](https://github.com/Common-Longitudinal-ICU-data-Format/CLIF-MIMIC)
 2. [CLIF-C2D2](https://github.com/Common-Longitudinal-ICU-data-Format/CLIF-C2D2)
-3. [CLIF-MEDS](https://github.com/Common-Longitudinal-ICU-data-Format/CLIF_MEDS) 
+3. [CLIF-MEDS](https://github.com/Common-Longitudinal-ICU-data-Format/CLIF_MEDS)
 
 </td>
 
@@ -53,6 +54,7 @@ Advancing Critical Care Through Federated Research, read more at our 🌐 [Websi
 
 #### 🔬 **Projects**
 ----
+⭐ [CLIF-proof-of-concept](https://github.com/Common-Longitudinal-ICU-data-Format/CLIF-proof-of-concept) — Proof of concept studies from [A common longitudinal intensive care unit data format (CLIF) for critical illness research, *Intensive Care Medicine* 2025](https://doi.org/10.1007/s00134-025-07848-7)⭐
 1. [CLIF_rule-based-SAT-comparison](https://github.com/Common-Longitudinal-ICU-data-Format/CLIF_rule-based-SAT-comparison)  
 2. [CLIF_icu_readmission](https://github.com/Common-Longitudinal-ICU-data-Format/CLIF_icu_readmission)  
 3. [clif_prf_prediction](https://github.com/Common-Longitudinal-ICU-data-Format/clif_prf_prediction)  
@@ -65,7 +67,7 @@ Advancing Critical Care Through Federated Research, read more at our 🌐 [Websi
 10. [CLIF-epi-of-sedation](https://github.com/Common-Longitudinal-ICU-data-Format/CLIF-epi-of-sedation)  
 11. [CLIF-transplant-valeos](https://github.com/Common-Longitudinal-ICU-data-Format/CLIF-transplant-valeos)  
 12. [CLIF_Proning_Incidence_Severe_ARF](https://github.com/Common-Longitudinal-ICU-data-Format/CLIF_Proning_Incidence_Severe_ARF)  
-13. [CLIF_transplant](https://github.com/Common-Longitudinal-ICU-data-Format/CLIF_transplant)  
+13. [CLIF_hr_transplant_recipient](https://github.com/Common-Longitudinal-ICU-data-Format/CLIF_transplant)  
 14. [CLIF-epidemiology-of-CRRT](https://github.com/Common-Longitudinal-ICU-data-Format/CLIF-epidemiology-of-CRRT)
 15. [CLIF-sipa-model-training](https://github.com/Common-Longitudinal-ICU-data-Format/CLIF-sipa-model-training)  
 16. [CLIFATRON](https://github.com/Common-Longitudinal-ICU-data-Format/CLIFATRON)  
