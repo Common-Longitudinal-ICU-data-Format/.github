@@ -28,7 +28,8 @@ Advancing Critical Care Through Federated Research, read more at our 🌐 [Websi
 1. [CLIFpy](https://github.com/Common-Longitudinal-ICU-data-Format/clifpy) <img src="https://img.shields.io/pypi/v/clifpy" alt="PyPI" style="vertical-align: sub;">  
 2. [CLIF_cohort_identifier](https://github.com/Common-Longitudinal-ICU-data-Format/CLIF_cohort_identifier)  
 3. [CLIF-TableOne](https://github.com/Common-Longitudinal-ICU-data-Format/CLIF-TableOne)  
-4. [CLIF-Lighthouse](https://github.com/Common-Longitudinal-ICU-data-Format/CLIF-Lighthouse) 
+4. [CLIF-Lighthouse](https://github.com/Common-Longitudinal-ICU-data-Format/CLIF-Lighthouse)
+5. [CLIF Claude skills plugin](https://github.com/Common-Longitudinal-ICU-data-Format/skills) 
 
 </td>
 
