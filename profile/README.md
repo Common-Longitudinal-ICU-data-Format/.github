@@ -87,11 +87,12 @@ Advancing Critical Care Through Federated Research, read more at our 🌐 [Websi
 21. [Sepsis Identification](https://github.com/Common-Longitudinal-ICU-data-Format/CLIF_sepsis)
 22. [SIPA](https://github.com/Common-Longitudinal-ICU-data-Format/CLIF-SIPA)
 23. [SIPA Model Training](https://github.com/Common-Longitudinal-ICU-data-Format/CLIF-sipa-model-training)
-24. [Transplant Recipient](https://github.com/Common-Longitudinal-ICU-data-Format/CLIF_transplant)
-25. [Transplant Valeos](https://github.com/Common-Longitudinal-ICU-data-Format/CLIF-transplant-valeos)
-26. [Variation in Antimicrobial Consumption in Critically Ill Adults](https://github.com/Common-Longitudinal-ICU-data-Format/Variation-Antimicrobial-Consumption-in-Critically-Ill-Adults)
-27. [Variation in Management of Culture-Positive Empyema](https://github.com/Common-Longitudinal-ICU-data-Format/Variation-in-the-Management-of-Culture-Positive-Empyema)
-28. [Ventilation Variation](https://github.com/Common-Longitudinal-ICU-data-Format/clif_vent_variation)
+24. [Temperature Trajectory Subphenotypes After CAR T-Cell Administration]()
+25. [Transplant Recipient](https://github.com/Common-Longitudinal-ICU-data-Format/CLIF_transplant)
+26. [Transplant Valeos](https://github.com/Common-Longitudinal-ICU-data-Format/CLIF-transplant-valeos)
+27. [Variation in Antimicrobial Consumption in Critically Ill Adults](https://github.com/Common-Longitudinal-ICU-data-Format/Variation-Antimicrobial-Consumption-in-Critically-Ill-Adults)
+28. [Variation in Management of Culture-Positive Empyema](https://github.com/Common-Longitudinal-ICU-data-Format/Variation-in-the-Management-of-Culture-Positive-Empyema)
+29. [Ventilation Variation](https://github.com/Common-Longitudinal-ICU-data-Format/clif_vent_variation)
 
 </td>
 </tr>
