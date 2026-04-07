@@ -67,9 +67,10 @@ Advancing Critical Care Through Federated Research, read more at our 🌐 [Websi
 9. [Epidemiology of Sedation](https://github.com/Common-Longitudinal-ICU-data-Format/CLIF-epi-of-sedation)
 10. [FLAME-ICU](https://github.com/Common-Longitudinal-ICU-data-Format/FLAME-ICU)
 11. [ICU Readmission](https://github.com/Common-Longitudinal-ICU-data-Format/CLIF_icu_readmission)
-12. [Paralytic Use Across CLIF Consortium](https://github.com/baanna23/CLIF_paralytics)
-13. [Prolonged Respiratory Failure (ITRACH)](https://github.com/Common-Longitudinal-ICU-data-Format/clif_prf_itrach)
-14. [Prolonged Respiratory Failure Prediction](https://github.com/Common-Longitudinal-ICU-data-Format/clif_prf_prediction)
+12. [ICU Respiratory Failure Trajectories, Air Pollution Exposure, and Outcomes](https://github.com/clif-consortium/CLIF-LungCx-Epi)
+13. [Paralytic Use Across CLIF Consortium](https://github.com/baanna23/CLIF_paralytics)
+14. [Prolonged Respiratory Failure (ITRACH)](https://github.com/Common-Longitudinal-ICU-data-Format/clif_prf_itrach)
+15. [Prolonged Respiratory Failure Prediction](https://github.com/Common-Longitudinal-ICU-data-Format/clif_prf_prediction)
 
 </td>
 
