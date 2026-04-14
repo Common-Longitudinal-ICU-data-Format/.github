@@ -97,5 +97,12 @@ Advancing Critical Care Through Federated Research, read more at our 🌐 [Websi
 </td>
 </tr>
 </table>
+
+
+<div align="center">
+  
+Need help getting started on a project, use our [Project Template](https://github.com/Common-Longitudinal-ICU-data-Format/CLIF-Project-Template)!
+
+</div>
 </div>
 
