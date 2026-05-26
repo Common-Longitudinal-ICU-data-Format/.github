@@ -29,7 +29,7 @@ Advancing Critical Care Through Federated Research, read more at our 🌐 [Websi
 2. [CLIF_cohort_identifier](https://github.com/Common-Longitudinal-ICU-data-Format/CLIF_cohort_identifier)  
 3. [CLIF-TableOne](https://github.com/Common-Longitudinal-ICU-data-Format/CLIF-TableOne)  
 4. [CLIF-Lighthouse](https://github.com/Common-Longitudinal-ICU-data-Format/CLIF-Lighthouse)
-5. [CLIF Claude skills plugin](https://github.com/Common-Longitudinal-ICU-data-Format/skills) 
+5. [CLIF Claude skills plugin](https://github.com/Common-Longitudinal-ICU-data-Format/skills)
 
 </td>
 
@@ -53,7 +53,6 @@ Advancing Critical Care Through Federated Research, read more at our 🌐 [Websi
 
 <td width="500px" valign="top">
 
-
 #### 🔬 **Projects**
 ----
 ⭐ [CLIF-proof-of-concept](https://github.com/Common-Longitudinal-ICU-data-Format/CLIF-proof-of-concept) — Proof of concept studies from [A common longitudinal intensive care unit data format (CLIF) for critical illness research, *Intensive Care Medicine* 2025](https://doi.org/10.1007/s00134-025-07848-7)⭐
@@ -73,15 +72,15 @@ Advancing Critical Care Through Federated Research, read more at our 🌐 [Websi
 14. [Epidemiology of Sedation](https://github.com/Common-Longitudinal-ICU-data-Format/CLIF-epi-of-sedation)
 15. [FLAIR](https://github.com/Common-Longitudinal-ICU-data-Format/FLAIR)
 16. [FLAME-ICU](https://github.com/Common-Longitudinal-ICU-data-Format/FLAME-ICU)
-17. [HROHCA](https://github.com/petergraffy/CLIF-HROHCA)
-18. [ICU Readmission](https://github.com/Common-Longitudinal-ICU-data-Format/CLIF_icu_readmission)
-19. [ICU Respiratory Failure Trajectories, Air Pollution Exposure, and Outcomes](https://github.com/clif-consortium/CLIF-LungCx-Epi)
-20. [Induction Dose Variability during RSI](https://github.com/Common-Longitudinal-ICU-data-Format/Induction_Variability_RSI)
-21. [Language Disparities in Patients Undergoing IMV](https://github.com/acortizmd/deep_sedation_language_final/tree/main)
-22. [OHCA RL](https://github.com/Common-Longitudinal-ICU-data-Format/OHCA-RL)
-23. [Paralytic Use Across CLIF Consortium](https://github.com/baanna23/CLIF_paralytics)
-24. [PF vs SF Performance](https://github.com/Common-Longitudinal-ICU-data-Format/CLIF_PFvsSF_Performance)
-25. [Prolonged Respiratory Failure (ITRACH)](https://github.com/Common-Longitudinal-ICU-data-Format/clif_prf_itrach)
+17. [High Risk Extubation Devices](https://github.com/Common-Longitudinal-ICU-data-Format/CLIF-high-risk-extubation-devices)
+18. [HROHCA](https://github.com/petergraffy/CLIF-HROHCA)
+19. [ICU Readmission](https://github.com/Common-Longitudinal-ICU-data-Format/CLIF_icu_readmission)
+20. [ICU Respiratory Failure Trajectories, Air Pollution Exposure, and Outcomes](https://github.com/clif-consortium/CLIF-LungCx-Epi)
+21. [Induction Dose Variability during RSI](https://github.com/Common-Longitudinal-ICU-data-Format/Induction_Variability_RSI)
+22. [Language Disparities in Patients Undergoing IMV](https://github.com/acortizmd/deep_sedation_language_final/tree/main)
+23. [OHCA RL](https://github.com/Common-Longitudinal-ICU-data-Format/OHCA-RL)
+24. [Paralytic Use Across CLIF Consortium](https://github.com/baanna23/CLIF_paralytics)
+25. [PF vs SF Performance](https://github.com/Common-Longitudinal-ICU-data-Format/CLIF_PFvsSF_Performance)
 
 </td>
 
@@ -89,29 +88,32 @@ Advancing Critical Care Through Federated Research, read more at our 🌐 [Websi
 
 #### 🔬 **Projects** (cont.)
 ----
-26. [Prolonged Respiratory Failure Prediction](https://github.com/Common-Longitudinal-ICU-data-Format/clif_prf_prediction)
-27. [Proning Incidence in Severe ARF](https://github.com/Common-Longitudinal-ICU-data-Format/CLIF_Proning_Incidence_Severe_ARF)
-28. [Resistance Patterns of Pseudomonas Aeruginosa in Critically Ill Adults](https://github.com/Common-Longitudinal-ICU-data-Format/Pseudomonas-Resistance-Patterns-in-the-United-States-A-Seven-Year-Review)
-29. [Respiratory Failure Environmental Risk (REFER) in ICU Patients](https://github.com/petergraffy/CLIF-REFER)
-30. [Role of Treatment Setting in Acute Respiratory Failure](https://github.com/Common-Longitudinal-ICU-data-Format/ARF-NIV_TreatmentLocation)
-31. [Rule-Based SAT Comparison](https://github.com/Common-Longitudinal-ICU-data-Format/CLIF_rule-based-SAT-comparison)
-32. [Rule-Based SAT/SBT Signature Detection](https://github.com/Common-Longitudinal-ICU-data-Format/CLIF_rule_based_SAT_SBT_signature)
-33. [Sepsis Identification](https://github.com/Common-Longitudinal-ICU-data-Format/CLIF_sepsis)
-34. [SIPA](https://github.com/Common-Longitudinal-ICU-data-Format/CLIF-SIPA)
-35. [SIPA Model Training](https://github.com/Common-Longitudinal-ICU-data-Format/CLIF-sipa-model-training)
-36. [Temperature Trajectory Subphenotypes After CAR T-Cell Administration]()
-37. [Transplant Recipient](https://github.com/Common-Longitudinal-ICU-data-Format/CLIF_transplant)
-38. [Transplant Donor Identifier](https://github.com/Common-Longitudinal-ICU-data-Format/CLIF-transplant-valeos)
-39. [Variation in Antimicrobial Consumption in Critically Ill Adults](https://github.com/Common-Longitudinal-ICU-data-Format/Variation-Antimicrobial-Consumption-in-Critically-Ill-Adults)
-40. [Variation in Management of Culture-Positive Empyema](https://github.com/Common-Longitudinal-ICU-data-Format/Variation-in-the-Management-of-Culture-Positive-Empyema)
-41. [Ventilation Variation](https://github.com/Common-Longitudinal-ICU-data-Format/clif_vent_variation)
+
+26. [Prolonged Respiratory Failure (ITRACH)](https://github.com/Common-Longitudinal-ICU-data-Format/clif_prf_itrach)
+27. [Prolonged Respiratory Failure Prediction](https://github.com/Common-Longitudinal-ICU-data-Format/clif_prf_prediction)
+28. [Proning Incidence in Severe ARF](https://github.com/Common-Longitudinal-ICU-data-Format/CLIF_Proning_Incidence_Severe_ARF)
+29. [Resistance Patterns of Pseudomonas Aeruginosa in Critically Ill Adults](https://github.com/Common-Longitudinal-ICU-data-Format/Pseudomonas-Resistance-Patterns-in-the-United-States-A-Seven-Year-Review)
+30. [Respiratory Failure Environmental Risk (REFER) in ICU Patients](https://github.com/petergraffy/CLIF-REFER)
+31. [Role of Treatment Setting in Acute Respiratory Failure](https://github.com/Common-Longitudinal-ICU-data-Format/ARF-NIV_TreatmentLocation)
+32. [Rule-Based SAT Comparison](https://github.com/Common-Longitudinal-ICU-data-Format/CLIF_rule-based-SAT-comparison)
+33. [Rule-Based SAT/SBT Signature Detection](https://github.com/Common-Longitudinal-ICU-data-Format/CLIF_rule_based_SAT_SBT_signature)
+34. [Sepsis Identification](https://github.com/Common-Longitudinal-ICU-data-Format/CLIF_sepsis)
+35. [SIPA](https://github.com/Common-Longitudinal-ICU-data-Format/CLIF-SIPA)
+36. [SIPA Model Training](https://github.com/Common-Longitudinal-ICU-data-Format/CLIF-sipa-model-training)
+37. [Temperature Trajectory Subphenotypes After CAR T-Cell Administration]()
+38. [Transplant Recipient](https://github.com/Common-Longitudinal-ICU-data-Format/CLIF_transplant)
+39. [Transplant Donor Identifier](https://github.com/Common-Longitudinal-ICU-data-Format/CLIF-transplant-valeos)
+40. [Variation in Antimicrobial Consumption in Critically Ill Adults](https://github.com/Common-Longitudinal-ICU-data-Format/Variation-Antimicrobial-Consumption-in-Critically-Ill-Adults)
+41. [Variation in Management of Culture-Positive Empyema](https://github.com/Common-Longitudinal-ICU-data-Format/Variation-in-the-Management-of-Culture-Positive-Empyema)
+42. [Ventilation Variation](https://github.com/Common-Longitudinal-ICU-data-Format/clif_vent_variation)
+
 
 
 
 </td>
 </tr>
 </table>
-
+</div>
 
 <div align="center">
   
