@@ -399,7 +399,8 @@ def main() -> int:
                 continue
             outcome = handle(e["url"])
             print(f"[backfill] {e['title']}: {outcome}")
-            if outcome["outcome"] == "mirrored":
+            # "in_org": the org already holds a copy at the same commit as the source.
+            if outcome["outcome"] in ("mirrored", "in_org"):
                 relinks[e["url"]] = outcome["mirror_url"]
                 summary.append(f"Re-linked **{e['title']}** to {outcome['mirror_url']} (copied from {e['url']})")
             else:
