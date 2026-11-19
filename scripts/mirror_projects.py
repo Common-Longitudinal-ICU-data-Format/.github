@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Mirror closed CLIF project-run repos into the organization, once each.
+"""Mirror closed CLIF project-run repos into the organization.
 
 Why: project code often lives in personal accounts. A one-time, independent copy
 in this org makes it searchable with `org:Common-Longitudinal-ICU-data-Format`.
@@ -16,7 +16,10 @@ What one run does:
        - uses Git LFS / is empty       -> skipped
        - otherwise                     -> create an org repo with the same name,
                                           push all branches and tags, archive it
-     A copy is a snapshot taken at project close. It is never re-synced.
+     A copy is a snapshot taken when a run closes. It is not kept in sync with
+     the source. It is updated only when a later run of the same project (a
+     rerun) closes: the copy this job made is reopened, brought up to the
+     source's current code, and archived again.
   3. Adds the project to the Projects list in profile/README.md and commits it
      to main (no pull request). The member-only README in `.github-private`
      gets the same change, so both views stay aligned.
@@ -130,8 +133,12 @@ def head_sha(owner: str, repo: str, branch: str | None) -> str | None:
     return commit.get("sha") if commit else None
 
 
-def mirror_one(owner: str, repo: str, dry_run: bool) -> dict:
+def mirror_one(owner: str, repo: str, dry_run: bool, refresh: bool = False) -> dict:
     """Decide what to do with one source repo and do it.
+
+    refresh: the request comes from a project run that has just closed. If this
+    job already copied the repo for an earlier run and the source has moved on
+    since, the org copy is updated to the current code.
 
     Returns {"outcome": "in_org" | "mirrored" | "skipped", "mirror_url"?, "reason"?}.
     """
@@ -148,7 +155,7 @@ def mirror_one(owner: str, repo: str, dry_run: bool) -> dict:
     name = source["name"]
 
     existing = gh_api(f"repos/{ORG}/{name}")
-    resume = False
+    resume = refreshing = False
     if existing:
         description = (existing.get("description") or "").lower()
         ours = description.startswith(f"{SNAPSHOT_PREFIX}{owner}/{name} ".lower())
@@ -160,13 +167,21 @@ def mirror_one(owner: str, repo: str, dry_run: bool) -> dict:
             return {"outcome": "skipped",
                     "reason": f"a different repo named {name} already exists in the CLIF org"}
         if existing.get("archived"):
-            return {"outcome": "mirrored", "mirror_url": existing["html_url"]}
-        resume = True  # an earlier run created it but did not finish
+            source_head = head_sha(owner, name, source.get("default_branch"))
+            unchanged = source_head is not None and \
+                source_head == head_sha(ORG, name, existing.get("default_branch"))
+            if not refresh or unchanged:
+                return {"outcome": "mirrored", "mirror_url": existing["html_url"]}
+            refreshing = True  # a later run of the project closed with newer code
+        else:
+            resume = True  # an earlier run created or reopened it but did not finish
 
     if source.get("size", 0) == 0:
         return {"outcome": "skipped", "reason": "source repo is empty"}
+    today = datetime.date.today().isoformat()
+    description = f"{SNAPSHOT_PREFIX}{owner}/{name} at project close ({today}). Read-only copy for org code search."
     if dry_run:
-        return {"outcome": "mirrored", "mirror_url": org_url(name), "dry": True}
+        return {"outcome": "mirrored", "mirror_url": org_url(name), "dry": True, "refreshed": refreshing}
 
     with tempfile.TemporaryDirectory() as tmp:
         bare = os.path.join(tmp, "src.git")
@@ -176,11 +191,16 @@ def mirror_one(owner: str, repo: str, dry_run: bool) -> dict:
         if uses_lfs(bare):
             return {"outcome": "skipped", "reason": "source repo uses Git LFS"}
 
-        if not resume:
-            today = datetime.date.today().isoformat()
+        if refreshing:
+            # An archived repo is read-only, so reopen it for the update. If a later
+            # step fails it stays open and the next run finishes the job.
+            if not gh_api(f"repos/{ORG}/{name}", "PATCH", {"archived": False}):
+                return {"outcome": "skipped",
+                        "reason": f"could not reopen the org copy of {name} to refresh it (will be retried)"}
+        elif not resume:
             created = gh_api(f"orgs/{ORG}/repos", "POST", {
                 "name": name,
-                "description": f"{SNAPSHOT_PREFIX}{owner}/{name} at project close ({today}). Read-only copy for org code search.",
+                "description": description,
                 "private": False,
                 "has_issues": False,
                 "has_wiki": False,
@@ -193,7 +213,7 @@ def mirror_one(owner: str, repo: str, dry_run: bool) -> dict:
 
         pushed = git("-c", f"http.https://github.com/.extraheader={auth_header()}",
                      "push", "--quiet", f"https://github.com/{ORG}/{name}.git",
-                     "refs/heads/*:refs/heads/*", "refs/tags/*:refs/tags/*",
+                     "+refs/heads/*:refs/heads/*", "+refs/tags/*:refs/tags/*",
                      cwd=bare, check=False)
         if pushed.returncode != 0:
             return {"outcome": "skipped",
@@ -202,9 +222,11 @@ def mirror_one(owner: str, repo: str, dry_run: bool) -> dict:
     default_branch = source.get("default_branch")
     if default_branch:
         gh_api(f"repos/{ORG}/{name}", "PATCH", {"default_branch": default_branch})
+    if existing:
+        gh_api(f"repos/{ORG}/{name}", "PATCH", {"description": description})  # new date
     if not gh_api(f"repos/{ORG}/{name}", "PATCH", {"archived": True}):
         return {"outcome": "skipped", "reason": f"copied, but could not archive {name} in the org (will be retried)"}
-    return {"outcome": "mirrored", "mirror_url": org_url(name)}
+    return {"outcome": "mirrored", "mirror_url": org_url(name), "refreshed": refreshing}
 
 
 # --------------------------------------------------------------------------
@@ -358,13 +380,13 @@ def main() -> int:
 
     cache: dict[tuple[str, str], dict] = {}
 
-    def handle(url: str) -> dict:
+    def handle(url: str, refresh: bool = False) -> dict:
         parsed = parse_repo(url)
         if not parsed:
             return {"outcome": "skipped", "reason": "repo link is not a GitHub repository URL"}
         key = (parsed[0].lower(), parsed[1].lower())
         if key not in cache:
-            cache[key] = mirror_one(parsed[0], parsed[1], dry_run)
+            cache[key] = mirror_one(parsed[0], parsed[1], dry_run, refresh)
         return cache[key]
 
     results: list[dict] = []      # reported to the portal
@@ -375,7 +397,9 @@ def main() -> int:
     # Tracker runs go first: when two sources share a repo name, the one the
     # tracker points at is the one that gets that name in the org.
     for run in portal("/api/project-runs/mirror-queue")["runs"]:
-        outcome = handle(run["repo_url"])
+        # A closed run that is still in the queue is new to this job. If its repo
+        # was copied for an earlier run of the project, the copy is refreshed.
+        outcome = handle(run["repo_url"], refresh=True)
         print(f"[queue] {run['title']}: {outcome}")
         result = {"id": run["id"], "title": run["title"], "repo_url": run["repo_url"],
                   "outcome": outcome["outcome"]}

@@ -1,7 +1,8 @@
 name: Mirror project repos
 
 # Once a week, copy the repo of every project run that has closed in the CLIF
-# portal tracker into this organization (one time, never re-synced), so the
+# portal tracker into this organization (a snapshot, refreshed only when a
+# rerun of the project closes), so the
 # code is found by org-wide code search, and add the project to the list in
 # profile/README.md (committed straight to main, here and in .github-private).
 # See scripts/mirror_projects.py.
