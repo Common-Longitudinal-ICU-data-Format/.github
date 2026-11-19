@@ -43,6 +43,7 @@ import re
 import subprocess
 import sys
 import tempfile
+import urllib.error
 import urllib.request
 
 ORG = "Common-Longitudinal-ICU-data-Format"
@@ -336,8 +337,12 @@ def portal(path: str, payload: dict | None = None) -> dict:
             "User-Agent": "clif-mirror-projects",
         },
     )
-    with urllib.request.urlopen(request, timeout=60) as response:
-        return json.load(response)
+    try:
+        with urllib.request.urlopen(request, timeout=60) as response:
+            return json.load(response)
+    except urllib.error.HTTPError as err:
+        # Show the portal's own explanation (e.g. which result it rejected).
+        raise SystemExit(f"Portal {path} answered {err.code}: {err.read().decode(errors='replace')[:500]}")
 
 
 # --------------------------------------------------------------------------
@@ -367,21 +372,8 @@ def main() -> int:
     additions: list[dict] = []    # README: new entries
     summary: list[str] = []
 
-    if backfill:
-        entries, _, _ = read_entries(readme.split("\n"))
-        for e in entries:
-            parsed = parse_repo(e["url"])
-            if parsed and parsed[0].lower() == ORG.lower():
-                continue
-            outcome = handle(e["url"])
-            print(f"[backfill] {e['title']}: {outcome}")
-            if outcome["outcome"] == "mirrored":
-                relinks[e["url"]] = outcome["mirror_url"]
-                summary.append(f"Re-linked **{e['title']}** to {outcome['mirror_url']} (copied from {e['url']})")
-            else:
-                results.append({"title": e["title"], "repo_url": e["url"],
-                                "outcome": "skipped", "reason": outcome.get("reason", "not mirrored")})
-
+    # Tracker runs go first: when two sources share a repo name, the one the
+    # tracker points at is the one that gets that name in the org.
     for run in portal("/api/project-runs/mirror-queue")["runs"]:
         outcome = handle(run["repo_url"])
         print(f"[queue] {run['title']}: {outcome}")
@@ -396,6 +388,23 @@ def main() -> int:
                 relinks[run["repo_url"]] = outcome["mirror_url"]
             summary.append(f"**{run['title']}**: {outcome['mirror_url']}")
         results.append(result)
+
+    if backfill:
+        entries, _, _ = read_entries(readme.split("\n"))
+        for e in entries:
+            if not e["url"]:
+                continue  # listed before its repo exists; nothing to copy or report
+            parsed = parse_repo(e["url"])
+            if parsed and parsed[0].lower() == ORG.lower():
+                continue
+            outcome = handle(e["url"])
+            print(f"[backfill] {e['title']}: {outcome}")
+            if outcome["outcome"] == "mirrored":
+                relinks[e["url"]] = outcome["mirror_url"]
+                summary.append(f"Re-linked **{e['title']}** to {outcome['mirror_url']} (copied from {e['url']})")
+            else:
+                results.append({"title": e["title"], "repo_url": e["url"],
+                                "outcome": "skipped", "reason": outcome.get("reason", "not mirrored")})
 
     new_readme = rewrite_readme(readme, relinks, additions)
     changed = new_readme != readme
