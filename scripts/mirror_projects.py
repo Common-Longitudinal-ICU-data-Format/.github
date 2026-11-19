@@ -17,9 +17,9 @@ What one run does:
        - otherwise                     -> create an org repo with the same name,
                                           push all branches and tags, archive it
      A copy is a snapshot taken at project close. It is never re-synced.
-  3. Adds the project to the Projects list in profile/README.md and opens (or
-     updates) a pull request. The member-only README in `.github-private` gets
-     the same change through its own pull request, so both views stay aligned.
+  3. Adds the project to the Projects list in profile/README.md and commits it
+     to main (no pull request). The member-only README in `.github-private`
+     gets the same change, so both views stay aligned.
   4. Reports the results to the portal, which records the org link on the run
      and emails the consortium inbox about anything skipped.
 
@@ -47,9 +47,7 @@ import urllib.request
 
 ORG = "Common-Longitudinal-ICU-data-Format"
 README = "profile/README.md"
-PUBLIC_REPO = f"{ORG}/.github"
 MEMBER_REPO = f"{ORG}/.github-private"  # README shown to org members
-LIST_BRANCH = "automation/project-list"
 SNAPSHOT_PREFIX = "Snapshot of https://github.com/"
 
 REPO_URL_RE = re.compile(r"^https?://(?:www\.)?github\.com/([^/\s]+)/([^/\s#?]+)", re.I)
@@ -278,52 +276,29 @@ def authed_git(*args: str, cwd: str | None = None, check: bool = True) -> subpro
     return git("-c", f"http.https://github.com/.extraheader={auth_header()}", *args, cwd=cwd, check=check)
 
 
-def checkout_list_branch(cwd: str | None = None) -> None:
-    """Start from the open list branch if there is one, else from main.
-
-    The branch is reused while its pull request is unmerged, so entries from an
-    earlier week are not lost.
-    """
+def publish_readme(new_text: str, cwd: str | None = None) -> None:
+    """Commit the README straight to main and push it. No pull request."""
     # The workflow checkout (cwd=None) already carries credentials. A second
     # auth header would be rejected, so only temporary clones get one added.
     remote_git = authed_git if cwd else git
-    fetched = remote_git("fetch", "--quiet", "origin", LIST_BRANCH, cwd=cwd, check=False)
-    if fetched.returncode == 0:
-        git("checkout", "--quiet", "-B", LIST_BRANCH, "FETCH_HEAD", cwd=cwd)
-        merged = git("merge", "--quiet", "--no-edit", "origin/main", cwd=cwd, check=False)
-        if merged.returncode != 0:
-            raise SystemExit(f"{LIST_BRANCH} conflicts with main. Merge or close its pull request, then re-run.")
-    else:
-        git("checkout", "--quiet", "-B", LIST_BRANCH, "origin/main", cwd=cwd)
-
-
-def publish_readme(repo: str, new_text: str, summary: list[str], cwd: str | None = None) -> None:
-    """Commit the README to the list branch of `repo` and make sure a pull request is open."""
     git("config", "user.name", "clif-mirror-bot", cwd=cwd)
     git("config", "user.email", "clif-mirror-bot@users.noreply.github.com", cwd=cwd)
     with open(os.path.join(cwd or ".", README), "w", encoding="utf-8") as fh:
         fh.write(new_text)
     git("add", README, cwd=cwd)
     git("commit", "--quiet", "-m", "Update Projects list with mirrored project repos", cwd=cwd)
-    remote_git = authed_git if cwd else git
-    remote_git("push", "--quiet", "--force-with-lease", "origin", f"HEAD:{LIST_BRANCH}", cwd=cwd)
-    open_pr = subprocess.run(
-        ["gh", "pr", "list", "--repo", repo, "--head", LIST_BRANCH, "--state", "open",
-         "--json", "number", "--jq", "length"],
-        capture_output=True, text=True)
-    if open_pr.stdout.strip() in ("", "0"):
-        body = "Weekly update from `scripts/mirror_projects.py`.\n\n" + "\n".join(f"- {s}" for s in summary)
-        subprocess.run(["gh", "pr", "create", "--repo", repo, "--head", LIST_BRANCH, "--base", "main",
-                        "--title", "Update Projects list with mirrored project repos", "--body", body],
-                       check=True)
+    pushed = remote_git("push", "--quiet", "origin", "HEAD:main", cwd=cwd, check=False)
+    if pushed.returncode != 0:
+        # Nothing has been reported to the portal yet, so the next run redoes this.
+        raise SystemExit(f"Could not push {README} to main: {pushed.stderr.strip()[:300]}")
 
 
-def update_member_readme(relinks: dict[str, str], additions: list[dict], summary: list[str], dry_run: bool) -> None:
+def update_member_readme(relinks: dict[str, str], additions: list[dict], dry_run: bool) -> None:
     """Apply the same list changes to the member-only profile README.
 
     Organization members see profile/README.md from the private `.github-private`
-    repo instead of the public one, so it gets the same update through its own
-    pull request. Skipped quietly if that repo does not exist.
+    repo instead of the public one, so it gets the same update, committed to its
+    main branch. Skipped quietly if that repo does not exist.
     """
     if not gh_api(f"repos/{MEMBER_REPO}"):
         print(f"{MEMBER_REPO} not found; member README not updated.")
@@ -333,8 +308,6 @@ def update_member_readme(relinks: dict[str, str], additions: list[dict], summary
         if cloned.returncode != 0:
             print(f"Could not clone {MEMBER_REPO}; member README not updated.")
             return
-        if not dry_run:
-            checkout_list_branch(tmp)
         path = os.path.join(tmp, README)
         if not os.path.exists(path):
             print(f"{MEMBER_REPO} has no {README}; member README not updated.")
@@ -344,7 +317,7 @@ def update_member_readme(relinks: dict[str, str], additions: list[dict], summary
         new = rewrite_readme(old, relinks, additions)
         print(f"member README {'changes' if new != old else 'unchanged'}")
         if new != old and not dry_run:
-            publish_readme(MEMBER_REPO, new, summary, cwd=tmp)
+            publish_readme(new, cwd=tmp)
 
 
 # --------------------------------------------------------------------------
@@ -375,8 +348,6 @@ def main() -> int:
     dry_run, backfill = flag("DRY_RUN"), flag("BACKFILL")
     print(f"dry_run={dry_run} backfill={backfill}")
 
-    if not dry_run:
-        checkout_list_branch()
     with open(README, encoding="utf-8") as fh:
         readme = fh.read()
 
@@ -430,7 +401,7 @@ def main() -> int:
     changed = new_readme != readme
     print(f"README {'changes' if changed else 'unchanged'}; {len(results)} result(s)")
 
-    update_member_readme(relinks, additions, summary, dry_run)
+    update_member_readme(relinks, additions, dry_run)
 
     if dry_run:
         if changed:
@@ -441,7 +412,8 @@ def main() -> int:
         return 0
 
     if changed:
-        publish_readme(PUBLIC_REPO, new_readme, summary)
+        publish_readme(new_readme)
+        print("Projects list updated:\n" + "\n".join(f"  - {s}" for s in summary))
     if results:
         print("portal:", portal("/api/project-runs/mirror-results", {"results": results}))
     return 0
