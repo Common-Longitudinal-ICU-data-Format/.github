@@ -30,6 +30,7 @@ Advancing Critical Care Through Federated Research, read more at our 🌐 [Websi
 3. [CLIF-TableOne](https://github.com/Common-Longitudinal-ICU-data-Format/CLIF-TableOne)  
 4. [CLIF Project Template](https://github.com/Common-Longitudinal-ICU-data-Format/CLIF-Project-Template)
 5. [CLIF Claude skills plugin](https://github.com/Common-Longitudinal-ICU-data-Format/skills)
+6. [Claude Code with sensitive data: guardrails demo](https://github.com/Common-Longitudinal-ICU-data-Format/clif-sensitive-data-demo)
 
 </td>
 
